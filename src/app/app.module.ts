@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PspdfkitPageComponent } from './components/pspdfkit-page/pspdfkit-page.component';
+import { PdfjsExpressPageComponent } from './components/pdfjs-express-page/pdfjs-express-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PspdfkitPageComponent,
+    PdfjsExpressPageComponent
   ],
   imports: [
     BrowserModule,
