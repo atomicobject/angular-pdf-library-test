@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PspdfkitPageComponent } from './components/pspdfkit-page/pspdfkit-page.component';
 import { PdfjsExpressPageComponent } from './components/pdfjs-express-page/pdfjs-express-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { PdfjsExpressPageComponent } from './components/pdfjs-express-page/pdfjs
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
