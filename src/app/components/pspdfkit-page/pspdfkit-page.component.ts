@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import PSPDFKit, { Instance } from 'pspdfkit';
+import PSPDFKit, { FormField, Instance } from 'pspdfkit';
 
 @Component({
   selector: 'app-pspdfkit-page',
@@ -8,6 +8,7 @@ import PSPDFKit, { Instance } from 'pspdfkit';
 })
 export class PspdfkitPageComponent {
   instance: Instance | undefined;
+  circuitCourt: string = '';
 
   ngAfterViewInit() {
     PSPDFKit.load({
@@ -21,9 +22,15 @@ export class PspdfkitPageComponent {
       // play with the PSPDFKit API.
       (window as any).instance = instance;
       this.instance = instance;
-      // instance.addEventListener('formFieldValues.update', (formFields) => {
-      //   console.log(formFields);
-      // });
+      instance.addEventListener('formFieldValues.update', (formFields) => {
+        const circuitField = formFields.toJS().find(f => f.name === 'cir');
+        console.log('cir value: ', circuitField.value);
+        this.circuitCourt = circuitField.value;
+      });
+      instance.getFormFields().then(function (formFields) {
+        console.log('All form fields', formFields.toJS());
+        console.log(formFields.toJS().find(f => f.name === 'cir'));
+      });
     });
   }
 }
