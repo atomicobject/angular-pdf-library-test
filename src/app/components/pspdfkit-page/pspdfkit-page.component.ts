@@ -15,12 +15,15 @@ export class PspdfkitPageComponent {
       baseUrl: location.protocol + '//' + location.host + '/assets/',
       document: '/assets/cc219b.pdf',
       container: '#pspdfkit-container',
-    }).then(instance => {
+    }).then(async (instance: Instance) => {
       // For the sake of this demo, store the PSPDFKit for Web instance
       // on the global object so that you can open the dev tools and
       // play with the PSPDFKit API.
       (window as any).instance = instance;
       this.instance = instance;
+      // instance.addEventListener('formFieldValues.update', (formFields) => {
+      //   console.log(formFields);
+      // });
     });
   }
 }
