@@ -17,4 +17,8 @@ export class AppComponent {
   public navToPdfjsExpress() {
     this.router.navigate(['/pdfjs-express']);
   }
+
+  public navToNgxExtended() {
+    this.router.navigate(['/ngx-extended-pdf-viewer']);
+  }
 }

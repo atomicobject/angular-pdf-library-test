@@ -1,0 +1,11 @@
+<label for="circuit-court">Circuit Court: </label>
+<input id="circuit-court" type="text" [(ngModel)]="circuitCourt">
+
+<!--Can pass a blob to src as well-->
+<ngx-extended-pdf-viewer
+  [src]="'assets/cc219b.pdf'"
+  [useBrowserLocale]="true"
+  (pdfLoaded)="onLoaded()"
+  [(formData)]="formData"
+  (formDataChange)="onFormDataChange($event)"
+></ngx-extended-pdf-viewer>
