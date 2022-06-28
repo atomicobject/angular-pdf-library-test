@@ -10,6 +10,7 @@ type FormData = { [fieldName: string]: string | number | boolean | string[] };
 export class NgxExtendedPdfViewerPageComponent {
   circuitCourt = '';
   loaded = false;
+  showOpenFileButton = false;
 
   set formData(data: FormData) {
     this.circuitCourt = data['cir'] as string;
@@ -28,5 +29,9 @@ export class NgxExtendedPdfViewerPageComponent {
   // Event only contains fields that have a value, or have been edited
   onFormDataChange(event: any) {
     console.log(event);
+  }
+
+  toggleShowOpenFile() {
+    this.showOpenFileButton = !this.showOpenFileButton;
   }
 }

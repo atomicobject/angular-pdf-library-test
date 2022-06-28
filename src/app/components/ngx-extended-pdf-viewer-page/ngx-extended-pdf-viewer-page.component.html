@@ -1,5 +1,7 @@
 <label for="circuit-court">Circuit Court: </label>
 <input id="circuit-court" type="text" [(ngModel)]="circuitCourt">
+<label for="show-open-file">Show Open File Button: </label>
+<input id="show-open-file" type="button" [(ngModel)]="showOpenFileButton" (click)="toggleShowOpenFile()">
 
 <!--Can pass a blob to src as well-->
 <ngx-extended-pdf-viewer
@@ -8,4 +10,5 @@
   (pdfLoaded)="onLoaded()"
   [(formData)]="formData"
   (formDataChange)="onFormDataChange($event)"
+  [showOpenFileButton]="showOpenFileButton"
 ></ngx-extended-pdf-viewer>
